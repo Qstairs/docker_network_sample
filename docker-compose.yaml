@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+  test_service_one:
+    image: ubuntu:latest
+    container_name: test_service1
+    build: ./
+    networks:
+      - test_network
+    tty: true
+    stdin_open: true
+    privileged: true
+  test_service_two:
+    image: ubuntu:latest
+    container_name: test_service2
+    build: ./
+    networks:
+      - test_network
+    tty: true
+    stdin_open: true
+    privileged: true
+networks:
+  test_network:
